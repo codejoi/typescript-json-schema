@@ -1390,9 +1390,18 @@ export class JsonSchemaGenerator {
         this.schemaOverrides.set(symbolName, schema);
     }
 
-    public getSchemaForSymbol(symbolName: string, includeReffedDefinitions: boolean = true): Definition {
+    public getSchemaForSymbol(
+        symbolName: string,
+        includeReffedDefinitions: boolean = true,
+        resetInternalMapping: boolean = false
+    ): Definition {
         if (!this.allSymbols[symbolName]) {
             throw new Error(`type ${symbolName} not found`);
+        }
+        if (resetInternalMapping) {
+            this.reffedDefinitions = {};
+            this.typeNamesById = {};
+            this.typeIdsByName = {};
         }
         const def = this.getTypeDefinition(
             this.allSymbols[symbolName],
