@@ -1,5 +1,5 @@
 {
-  "name": "typescript-json-schema",
+  "name": "@codejoi/typescript-json-schema",
   "version": "0.53.0",
   "description": "typescript-json-schema generates JSON Schema files from your Typescript sources",
   "main": "dist/typescript-json-schema.js",
@@ -28,9 +28,9 @@
       "email": "hi@fabiandev.io"
     }
   ],
-  "repository": {
-    "type": "git",
-    "url": "git@github.com:YousefED/typescript-json-schema.git"
+  "repository": "https://github.com/codejoi/typescript-json-schema",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/codejoi"
   },
   "licenses": [
     {
